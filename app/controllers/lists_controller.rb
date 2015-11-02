@@ -8,9 +8,9 @@ class ListsController < ApplicationController
 
   end
   def create
-    list = List.new params[:list][:topic]
+    list = List.new(list_params)
     list.user = current_user
-    if @user.save
+    if list.save
       flash[:notice] = "You have succefully added a new Top 5!"
       redirect_to root_path
     else
@@ -20,6 +20,12 @@ class ListsController < ApplicationController
   end
   def show
     @list = List.find(params[:id])
+
+  end
+
+  private
+  def list_params
+    params.require(:list).permit(:topic)
 
   end
 
