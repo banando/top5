@@ -28,9 +28,12 @@ ActiveRecord::Schema.define(version: 20151102003837) do
   create_table "lists", force: :cascade do |t|
     t.string   "topic"
     t.integer  "likes"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -42,4 +45,5 @@ ActiveRecord::Schema.define(version: 20151102003837) do
     t.datetime "updated_at",                  null: false
   end
 
+  add_foreign_key "lists", "users"
 end
