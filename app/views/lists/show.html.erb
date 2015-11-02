@@ -1,1 +1,13 @@
 <h1>you are in the List view show.html.erb</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Topis:</strong>
+  <%= @list.topic %>
+</p>
+
+<p>
+  <strong>Submited by User:</strong>
+  <%= User.find(@list.user_id).name %>
+</p>
