@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :user_name
       t.string :password_digest
-      t.integer :post_num
-      t.integer :likes
+      t.integer :post_num, default: 0
+      t.integer :likes, default: 0
 
       t.timestamps null: false
     end

@@ -1,0 +1,30 @@
+<p id = "notice"><%= notice %></p>
+<p>
+  <% if current_user %>
+    Welcome, <%= current_user.user_name %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+  <td><%= link_to 'Log Out', session_path('end'), method: :delete, data: {confirm: "are you sure?"} %></td>
+  <% else %>
+  <td><%= link_to 'New User', new_user_path %></td>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+  <td><%= link_to 'Login', new_session_path   %></td>
+<% end %>
+</p>
+
+<h1>TOP 5</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1>TOP 5</h1>
+  </div>
+</div>
+
+
+<table>
+  <thread>
+    <tr>
+      <th>Topic</th>
+    </tr>
+
+
+
+</table>

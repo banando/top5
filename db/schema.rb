@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 20151102003837) do
     t.string   "name"
     t.string   "user_name"
     t.string   "password_digest"
-    t.integer  "post_num"
-    t.integer  "likes"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "post_num",        default: 0
+    t.integer  "likes",           default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
