@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+List.delete_all
+User.delete_all
+
 User.create(name: "Fernando Orozco", user_name: "Banando",
   password: "12345", password_confirmation: "12345")
 
@@ -38,6 +41,6 @@ list_examples.each do |topic, name1, spot1, price1, details1, name2, spot2, pric
     third: name3, location3: spot3, price3: price3, description3: details3,
     fourth: name4, location4: spot4, price4: price4, description4: details4,
     fifth: name5, location5: spot5, price5: price5, description5: details5,
-    user_id: 1)
+    user: User.first)
 end
 
