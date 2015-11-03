@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20151102235716) do
 
   create_table "lists", force: :cascade do |t|
     t.string   "topic"
-    t.integer  "likes"
+    t.integer  "likes",        default: 0
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "first"
     t.string   "second"
     t.string   "third"
