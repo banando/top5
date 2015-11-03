@@ -8,6 +8,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
+<p id = "notice"><%= notice %></p>
+<p>
+  <% if current_user %>
+    Welcome, <%= current_user.user_name %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+  <td><%= link_to 'Log Out', session_path('end'), method: :delete, data: {confirm: "are you sure?"} %></td>
+  <% else %>
+  <td><%= link_to 'New User', new_user_path %></td>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <td><%= link_to 'Login', new_session_path   %></td>
+<% end %>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+<%= link_to 'Home', root_path %>
+</p>
 
 <%= yield %>
 

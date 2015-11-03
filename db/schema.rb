@@ -16,26 +16,32 @@ ActiveRecord::Schema.define(version: 20151102235716) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "entries", force: :cascade do |t|
-    t.string   "name"
-    t.string   "location"
-    t.float    "price"
-    t.text     "details"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lists", force: :cascade do |t|
     t.string   "topic"
     t.integer  "likes"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "first"
-    t.text     "second"
-    t.text     "third"
-    t.text     "fourth"
-    t.text     "fifth"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "first"
+    t.string   "second"
+    t.string   "third"
+    t.string   "fourth"
+    t.string   "fifth"
+    t.string   "location1"
+    t.float    "price1"
+    t.text     "description1"
+    t.string   "location2"
+    t.float    "price2"
+    t.text     "description2"
+    t.string   "location3"
+    t.float    "price3"
+    t.text     "description3"
+    t.string   "location4"
+    t.float    "price4"
+    t.text     "description4"
+    t.string   "location5"
+    t.float    "price5"
+    t.text     "description5"
   end
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
