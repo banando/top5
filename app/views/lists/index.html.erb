@@ -30,12 +30,14 @@
   <tbody>
     <% @lists.each do |list| %>
         <tr><td><%= list.topic %></td></tr>
-        <tr><td>1. </td></tr>
-        <tr><td>2. </td></tr>
-        <tr><td>3. </td></tr>
-        <tr><td>4. </td></tr>
-        <tr><td>5. </td></tr>
+        <tr><td>1. <%= list.first %> </td></tr>
+        <tr><td>2. <%= list.second %> </td></tr>
+        <tr><td>3. <%= list.third %> </td></tr>
+        <tr><td>4. <%= list.fourth %> </td></tr>
+        <tr><td>5. <%= list.fifth %> </td></tr>
         <tr><td><%= link_to 'Show', list %></td></tr>
+        <tr><td><%= link_to 'Delete', list, method: :delete, data: {confirm: 'Are you sure'} %></td></tr>
+
     <% end %>
 
   </tbody>
