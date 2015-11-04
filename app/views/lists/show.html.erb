@@ -54,3 +54,32 @@
   </li>
 
 </ol>
+<h3>Comments:</h3>
+<%= form_for [@list, @comment] do |f| %>
+  <div class="field">
+    <%= f.label "New Comment" %>
+    <%= f.text_field :body %>
+    <% @comment.list = @list %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
+<ul>
+
+  <% if @comments %>
+    <% @comments.each do |c| %>
+      <li>
+        <%= c.body %>
+        <br>
+        <%= time_ago_in_words c.created_at %> ago | by
+        <%= c.user.name %> <br><br>
+        <!-- display user -->
+
+      </li>
+
+    <% end %>
+  <% else %>
+    <p>None</p>
+  <% end %>
+</ul>

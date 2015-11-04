@@ -23,14 +23,16 @@ class ListsController < ApplicationController
   end
   def show
     @list = List.find(params[:id])
-
+    @comments = Comment.where(list_id: @list.id)
+    @comment = Comment.new
   end
+
   def destroy
     @list = List.find(params[:id])
     @list.destroy
     redirect_to root_path, notice: 'List deleted'
-
   end
+
   def edit
     @list = List.find(params[:id])
     render 'new'

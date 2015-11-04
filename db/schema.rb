@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104173150) do
+ActiveRecord::Schema.define(version: 20151104173544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,31 +24,34 @@ ActiveRecord::Schema.define(version: 20151104173150) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "comments", ["list_id"], name: "index_comments_on_list_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
   create_table "lists", force: :cascade do |t|
     t.string   "topic"
     t.integer  "likes",        default: 0
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "first"
     t.string   "second"
     t.string   "third"
     t.string   "fourth"
     t.string   "fifth"
     t.string   "location1"
-    t.float    "price1"
+    t.float    "price1",       default: 0.0
     t.text     "description1"
     t.string   "location2"
-    t.float    "price2"
+    t.float    "price2",       default: 0.0
     t.text     "description2"
     t.string   "location3"
-    t.float    "price3"
+    t.float    "price3",       default: 0.0
     t.text     "description3"
     t.string   "location4"
-    t.float    "price4"
+    t.float    "price4",       default: 0.0
     t.text     "description4"
     t.string   "location5"
-    t.float    "price5"
+    t.float    "price5",       default: 0.0
     t.text     "description5"
   end
 
@@ -64,5 +67,7 @@ ActiveRecord::Schema.define(version: 20151104173150) do
     t.datetime "updated_at",                  null: false
   end
 
+  add_foreign_key "comments", "lists"
+  add_foreign_key "comments", "users"
   add_foreign_key "lists", "users"
 end
