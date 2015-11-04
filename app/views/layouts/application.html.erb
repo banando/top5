@@ -12,7 +12,7 @@
   <% if current_user %>
     Welcome, <%= current_user.user_name %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
-  <td><%= link_to 'Log Out', session_path('end'), method: :delete, data: {confirm: "are you sure?"} %></td>
+  <td><%= link_to 'Log Out', session_path('end'), method: :delete %></td>
   <% else %>
   <td><%= link_to 'New User', new_user_path %></td>
   &nbsp;&nbsp;|&nbsp;&nbsp;

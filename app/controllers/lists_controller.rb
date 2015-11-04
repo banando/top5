@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-  before_action :authenticate, only: [ :new, :show, :edit, :update]
   before_action :authorize, only: [:destroy, :edit, :update]
 
 
@@ -33,7 +32,6 @@ class ListsController < ApplicationController
 
   end
   def edit
-
     @list = List.find(params[:id])
     render 'new'
   end
@@ -53,15 +51,6 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit!
 
-  end
-
-  def authenticate
-      redirect_to new_session_path, alert: 'You must be logged in to continue!' if current_user.nil?
-    end
-
-  def authorize
-    @user = User.find(params[:id])
-    redirect_to root_path if @user != current_user
   end
 
 end
