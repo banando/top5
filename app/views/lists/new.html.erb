@@ -1,4 +1,4 @@
-<h1>You're in the New List form</h1>
+<h1 class="jumbotron">You're in the New List form</h1>
 
 <%= form_for(@list) do |f| %>
   <% if @list.errors.any? %>
@@ -11,26 +11,25 @@
       <% end %>
       </ul>
     </div>
-    <% end %>
-
+  <% end %>
   <div class="field">
     <%= f.label :topic %>
     <%= f.text_field :topic %>
   </div>
-  <div>
+  <div class="field">
     <%= f.label :first %>
     <%= f.text_field :first %>
   </div>
   <div class="field">
-    <%= f.label :location1 %>
+    <%= f.label "Location" %>
     <%= f.text_field :location1 %>
   </div>
   <div class="field">
-    <%= f.label :price1 %>
+    <%= f.label "Price $" %>
     <%= f.text_field :price1 %>
   </div>
   <div class="field">
-  <%= f.label :description1 %>
+  <%= f.label "Description" %>
   <%= f.text_field :description1 %>
   </div>
 
@@ -101,8 +100,7 @@
   <%= f.label :description5 %>
   <%= f.text_field :description5 %>
   </div>
-
   <div class="action">
     <%= f.submit %>
   </div>
-  <% end %>
+<% end %>

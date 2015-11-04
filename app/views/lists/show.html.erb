@@ -1,94 +1,56 @@
-<h1>you are in the List view show.html.erb</h1>
+<h1 class="jumbotron">
+ <div class="text-left"><strong>Topic:</strong>
+  <%= @list.topic %>
+ </div>
+ <div class="text-right">
+  <strong>Submited by User:</strong>
+  <%= User.find(@list.user_id).user_name %>
+
+ </div>
+</h1>
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Topis:</strong>
-  <%= @list.topic %>
-</p>
+<ol>
+  <li>
+    <h3><%= @list.first %></h3>
+    <ul>
+      <li>Location <%= @list.location1 %></li>
+      <li>Price $<%= sprintf('%.2f',(@list.price1)) %></li>
+      <li>Description <%= @list.description1 %></li>
+    </ul>
+  </li>
+  <li>
+    <h3><%= @list.second %></h3>
+    <ul>
+      <li>Location <%= @list.location2 %></li>
+      <li>Price $<%= sprintf('%.2f',(@list.price2)) %></li>
+      <li>Description <%= @list.description2 %></li>
+    </ul>
+  </li>
+  <li>
+    <h3><%= @list.third %></h3>
+    <ul>
+      <li>Location <%= @list.location3 %></li>
+      <li>Price $<%= sprintf('%.2f',(@list.price3)) %></li>
+      <li>Description <%= @list.description3 %></li>
+    </ul>
+  </li>
+  <li>
+    <h3><%= @list.fourth %></h3>
+    <ul>
+      <li>Location <%= @list.location4 %></li>
+      <li>Price $<%= sprintf('%.2f',(@list.price4)) %></li>
+      <li>Description <%= @list.description4 %></li>
+    </ul>
+  </li>
+  <li>
+    <h3><%= @list.fifth %></h3>
+    <ul>
+      <li>Location <%= @list.location5 %></li>
+      <li>Price $<%= sprintf('%.2f',(@list.price5)) %></li>
+      <li>Description <%= @list.description5 %></li>
+    </ul>
+  </li>
 
-<p>
-  <strong>Submited by User:</strong>
-  <%= User.find(@list.user_id).user_name %>
-</p>
-
-<p>
-  <strong>1.<%= @list.first %></strong>
-</p>
-<p>
-  <strong>location</strong>
-  <%= @list.location1 %>
-</p>
-<p>
-  <strong>price $</strong>
-  <%= sprintf('%.2f',(@list.price1)) %>
-</p>
-<p>
-  <strong>description</strong>
-  <%= @list.description1 %>
-</p>
-
-<p>
-  <strong>2.<%= @list.second %></strong>
-</p>
-<p>
-  <strong>location</strong>
-  <%= @list.location2 %>
-</p>
-<p>
-  <strong>price $</strong>
-  <%= sprintf('%.2f',(@list.price3)) %>
-</p>
-<p>
-  <strong>description</strong>
-  <%= @list.description3 %>
-</p>
-
-<p>
-  <strong>3.<%= @list.third %></strong>
-</p>
-<p>
-  <strong>location</strong>
-  <%= @list.location3 %>
-</p>
-<p>
-  <strong>price $</strong>
-  <%= sprintf('%.2f',(@list.price3)) %>
-</p>
-<p>
-  <strong>description</strong>
-  <%= @list.description3 %>
-</p>
-
-<p>
-  <strong>4.<%= @list.fourth %></strong>
-</p>
-<p>
-  <strong>location</strong>
-  <%= @list.location4 %>
-</p>
-<p>
-  <strong>price $</strong>
-  <%= sprintf('%.2f',(@list.price4)) %>
-</p>
-<p>
-  <strong>description</strong>
-  <%= @list.description4 %>
-</p>
-
-<p>
-  <strong>5.<%= @list.fifth %></strong>
-</p>
-<p>
-  <strong>location</strong>
-  <%= @list.location5 %>
-</p>
-<p>
-  <strong>price $</strong>
-  <%= sprintf('%.2f',(@list.price5)) %>
-</p>
-<p>
-  <strong>description</strong>
-  <%= @list.description5 %>
-</p>
-
+</ol>

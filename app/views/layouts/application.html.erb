@@ -8,8 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-<p id = "notice"><%= notice %></p>
-<p>
+<nav class="navbar navbar-inverse navbar-fixed-top ">
   <% if current_user %>
     Welcome, <%= current_user.user_name %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -22,7 +21,8 @@
 &nbsp;&nbsp;|&nbsp;&nbsp;
 
 <%= link_to 'Home', root_path %>
-</p>
+</nav>
+<p id = "notice"><%= notice %></p>
 
 <%= yield %>
 
