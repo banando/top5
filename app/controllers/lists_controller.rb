@@ -40,6 +40,7 @@ class ListsController < ApplicationController
 
   def update
     list = List.find(params[:id])
+    list.upvote! if params["vote"]
     if list.update(list_params)
       flash[:notice]= "Changes have been saved"
       redirect_to root_path
