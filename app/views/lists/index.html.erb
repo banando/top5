@@ -29,7 +29,7 @@
             <%= link_to 'Delete', list, method: :delete, data: {confirm: 'Are you sure'} %>
             <% end %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to 'Like', list_path(list, vote: true), method: :put %>
+            <%= link_to 'Like', root_path(vote: true) %>
             (<%= list.likes %>)
             </td></tr>
           </tbody>
