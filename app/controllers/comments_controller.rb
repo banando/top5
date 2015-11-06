@@ -17,9 +17,18 @@ class CommentsController < ApplicationController
     end
 
   end
+
+  def update
+    list = List.find(params["id"])
+
+    list.upvote! if params["vote"]
+
+    redirect_to root_path
+  end
+
   private
+
   def comment_params
     params.require(:comment).permit(:body, :user, :list)
   end
-
 end

@@ -44,3 +44,13 @@ ol{
   background-color: rgba(200,200,200, .5);
   width: 50%;
 }
+input[type="text"], input[type="password"]{
+  background-color: rgba(200,200,200,.7)
+}
+label{
+  width: 150px;
+  padding-left: 20px;
+  text-align: center;
+  background-color: rgba(200,200,200,.7)
+
+}
