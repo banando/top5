@@ -1,71 +1,61 @@
-<h1 class="jumbotron">
- <div class="text-left"><strong>Topic:</strong>
+<div class="forms container">
+ <h1 class="inline "><strong>Topic:</strong>
   <%= @list.topic %>
- </div>
- <div class="text-right">
+ </h1>
+ <div class="inline ">
   <strong>Submited by User:</strong>
   <%= User.find(@list.user_id).user_name %>
 
- </div>
-</h1>
+ </h1>
+</div>
 
 <p id="notice"><%= notice %></p>
 
 <ol>
   <li>
     <h3><%= @list.first %></h3>
-    <ul>
-      <li>Location <%= @list.location1 %></li>
-      <li>Price $<%= sprintf('%.2f',(@list.price1)) %></li>
-      <li>Description <%= @list.description1 %></li>
+    <ul class="container">
+      <li>Location: <%= @list.location1 %></li>
+      <li>Price: $<%= sprintf('%.2f',(@list.price1)) %></li>
+      <li>Description: <%= @list.description1 %></li>
     </ul>
   </li>
   <li>
     <h3><%= @list.second %></h3>
-    <ul>
-      <li>Location <%= @list.location2 %></li>
-      <li>Price $<%= sprintf('%.2f',(@list.price2)) %></li>
-      <li>Description <%= @list.description2 %></li>
+    <ul class="container">
+      <li>Location: <%= @list.location2 %></li>
+      <li>Price: $<%= sprintf('%.2f',(@list.price2)) %></li>
+      <li>Description: <%= @list.description2 %></li>
     </ul>
   </li>
   <li>
     <h3><%= @list.third %></h3>
-    <ul>
-      <li>Location <%= @list.location3 %></li>
-      <li>Price $<%= sprintf('%.2f',(@list.price3)) %></li>
-      <li>Description <%= @list.description3 %></li>
+    <ul class="container">
+      <li>Location: <%= @list.location3 %></li>
+      <li>Price: $<%= sprintf('%.2f',(@list.price3)) %></li>
+      <li>Description: <%= @list.description3 %></li>
     </ul>
   </li>
   <li>
     <h3><%= @list.fourth %></h3>
-    <ul>
-      <li>Location <%= @list.location4 %></li>
-      <li>Price $<%= sprintf('%.2f',(@list.price4)) %></li>
-      <li>Description <%= @list.description4 %></li>
+    <ul class="container">
+      <li>Location: <%= @list.location4 %></li>
+      <li>Price: $<%= sprintf('%.2f',(@list.price4)) %></li>
+      <li>Description: <%= @list.description4 %></li>
     </ul>
   </li>
   <li>
     <h3><%= @list.fifth %></h3>
-    <ul>
-      <li>Location <%= @list.location5 %></li>
-      <li>Price $<%= sprintf('%.2f',(@list.price5)) %></li>
-      <li>Description <%= @list.description5 %></li>
+    <ul class="container">
+      <li>Location: <%= @list.location5 %></li>
+      <li>Price: $<%= sprintf('%.2f',(@list.price5)) %></li>
+      <li>Description: <%= @list.description5 %></li>
     </ul>
   </li>
 
 
 </ol>
 <h3>Comments:</h3>
-<%= form_for [@list, @comment] do |f| %>
-  <div class="field">
-    <%= f.label "New Comment" %>
-    <%= f.text_field :body %>
-    <% @comment.list = @list %>
-  </div>
-  <div class="action">
-    <%= f.submit %>
-  </div>
-<% end %>
 <ul>
 
   <% if @comments %>
@@ -84,5 +74,14 @@
     <p>None</p>
   <% end %>
 </ul>
+<%= form_for [@list, @comment] do |f| %>
+  <div class="field">
+    <%= f.text_field :body %>
+    <%= f.submit "New Comment", :class => "action"%>
+    <% @comment.list = @list %>
+  </div>
+  <div class="action">
+  </div>
+<% end %>
 
 

@@ -1,5 +1,5 @@
 <div class="text-center top">
-    <h1>TOP 5</h1>
+    <h1><strong>Top 5</strong></h1>
 </div>
 
 <p id = topper>
@@ -13,24 +13,23 @@
     <% @lists.each do |list| %>
       <div class="col-md-4">
       <a class="plain-link" href="/lists/<%= list.id %>">
-        <table class="table table-condensed table-striped table-bordered">
+        <table class="table table-condensed table-bordered">
           <tbody>
-            <tr><th>Topic: <%= list.topic %></td></tr>
+            <tr><th>Topic: <%= list.topic %></th></tr>
             <tr><td>1. <%= list.first %> </td></tr>
             <tr><td>2. <%= list.second %> </td></tr>
             <tr><td>3. <%= list.third %> </td></tr>
             <tr><td>4. <%= list.fourth %> </td></tr>
             <tr><td>5. <%= list.fifth %> </td></tr>
-            <tr><td><%= link_to 'Show', list %>
             <% if current_user == list.user %>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <tr><td>
             <%= link_to 'Edit', edit_list_path(list) %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <%= link_to 'Delete', list, method: :delete, data: {confirm: 'Are you sure'} %>
-            <% end %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
-            <%= link_to 'Like', list_path(list, vote: true), method: :put %>
+            <%= link_to 'Like ' , list_path(list, vote: true), method: :put %>
             (<%= list.likes %>)
+            <% end %>
             </td></tr>
           </tbody>
         </table>
@@ -39,7 +38,3 @@
     <% end %>
   </div>
 </div>
-
-  </tbody>
-
-</table>
