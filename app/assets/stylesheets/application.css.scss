@@ -15,16 +15,42 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 nav{
   color: red;
+  text-align: justify;
 }
-.jumbotron{
+#top{
   text-align: center;
+  background: (250, 250, 250, .5);
 }
 body{
   font-size: 18px;
 }
 .plain-link:hover {
   text-decoration: none;
+
+}
+#topper{
+  text-align: center;
+}
+body{
+  background: url("http://www.mondo.com/wp-content/uploads/2015/02/LA2.jpg") no-repeat center center fixed;
+}
+table{
+  background-color: rgba(250, 250, 250, .5);
+}
+ol{
+  background-color: rgba(200,200,200, .5);
+  width: 50%;
+}
+input[type="text"], input[type="password"]{
+  background-color: rgba(200,200,200,.7)
+}
+label{
+  width: 150px;
+  padding-left: 20px;
+  text-align: center;
+  background-color: rgba(200,200,200,.7)
 
 }

@@ -3,13 +3,14 @@ class ListsController < ApplicationController
 
 
   def index
-    @lists = List.all
-
+    @lists = List.all.order(likes: :desc)
   end
+
   def new
     @list = List.new
 
   end
+
   def create
     list = List.new(list_params)
     list.user = current_user
@@ -21,6 +22,7 @@ class ListsController < ApplicationController
     end
 
   end
+
   def show
     @list = List.find(params[:id])
     @comments = Comment.where(list_id: @list.id)
@@ -40,14 +42,21 @@ class ListsController < ApplicationController
 
   def update
     list = List.find(params[:id])
-    if list.update(list_params)
+    if params["vote"]
+      list.upvote!
+      list.save
+      redirect_to root_path
+    elsif list.update(list_params)
       flash[:notice]= "Changes have been saved"
       redirect_to root_path
-    else
+    elsif
       render 'edit'
     end
 
   end
+
+
+
 
   private
   def list_params
